@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run less && webpack --mode development",
     "dev": "concurrently \"webpack -w\" \"nodemon server/index.js\"",
-    "start": "node server/index.js",
+    "start": "npm run build && node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
